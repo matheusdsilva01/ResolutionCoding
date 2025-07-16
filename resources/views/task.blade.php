@@ -1,4 +1,27 @@
-@extends("layouts.main")
+@props([
+    'title' => null,
+    'content' => "
+                    In this task, you'll learn how to create a responsive product showcase using CSS Grid.
+
+                    ## Requirements:
+                    1. Create a grid container with at least 6 product cards
+                    2. Make the grid responsive (1 column on mobile, 2-3 on tablet, 4+ on desktop)
+                    3. Use grid-template-areas for better layout control
+                    4. Add proper spacing between grid items
+
+                    ## Steps:
+                    1. Set up the HTML structure with a container and product cards
+                    2. Apply CSS Grid to the container
+                    3. Define responsive breakpoints
+                    4. Style the product cards
+                    5. Test the layout on different screen sizes
+
+                    ## Resources:
+                    - [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
+                    - [Grid by Example](https://gridbyexample.com/)"
+])
+
+@extends("components.layouts.app")
 @section('content')
     <main class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto space-y-6">
@@ -37,27 +60,9 @@
             </div>--}}
             <div
                 class="rounded-lg border border-border bg-secondary shadow-sm p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
-                <h2
-                    class="text-xl font-semibold mb-4">Instructions</h2>
+                <h2 class="text-xl font-semibold mb-4">Instructions</h2>
                 <div class="prose prose-sm max-w-none text-muted-foreground whitespace-pre-line">
-                    In this task, you'll learn how to create a responsive product showcase using CSS Grid.
-
-                    ## Requirements:
-                    1. Create a grid container with at least 6 product cards
-                    2. Make the grid responsive (1 column on mobile, 2-3 on tablet, 4+ on desktop)
-                    3. Use grid-template-areas for better layout control
-                    4. Add proper spacing between grid items
-
-                    ## Steps:
-                    1. Set up the HTML structure with a container and product cards
-                    2. Apply CSS Grid to the container
-                    3. Define responsive breakpoints
-                    4. Style the product cards
-                    5. Test the layout on different screen sizes
-
-                    ## Resources:
-                    - [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
-                    - [Grid by Example](https://gridbyexample.com/)
+                    {{$content}}
                 </div>
             </div>
             <div

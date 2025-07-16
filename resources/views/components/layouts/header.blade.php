@@ -1,6 +1,6 @@
 <header class="border-b border-border bg-secondary/50 backdrop-blur supports-[backdrop-filter]:bg-secondary/50">
     <div class="container mx-auto px-4 py-6">
-        @if(Route::is('viewTask'))
+        @if(Route::is('task.get'))
             <div class="flex items-center space-x-4">
                 <a href="/">
                     <button
@@ -23,7 +23,8 @@
                             <polygon points="10 8 16 12 10 16 10 8"></polygon>
                         </svg>
                     </div>
-                    <h1 class="text-2xl font-bold">Implement CSS Grid Layout</h1></div>
+                    <h1 class="text-2xl font-bold">{{$title}}</h1>
+                </div>
             </div>
         @else
             <div class="flex items-center justify-center">
