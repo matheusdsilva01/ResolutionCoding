@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-background text-white min-h-screen">
-@include('layouts.header')
+@include('components.layouts.header')
 @yield('content')
 </body>
 </html>

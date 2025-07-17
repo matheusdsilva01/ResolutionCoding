@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class TaskRequest extends FormRequest
+class UpdateTaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -20,12 +20,11 @@ class TaskRequest extends FormRequest
      *
      * @return array<string, ValidationRule|array|string>
      */
-
     public function rules(): array
     {
         return [
-            'title' => 'required',
-            'content' => 'required|min:15',
+            'title' => '',
+            'content' => 'min:15',
         ];
     }
 }

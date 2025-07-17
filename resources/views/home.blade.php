@@ -1,4 +1,4 @@
-@extends("layouts.main")
+@extends("components.layouts.app")
 @section("content")
 <main class="container mx-auto px-4 py-8">
     <div class="space-y-6">
@@ -10,10 +10,12 @@
 </main>
 <main class="flex px-6 lg:px-8 flex-col text-white">
     <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        <x-card />
-        <x-card title="Criar um container de aplicação API usando Docker" />
-        <x-card title="Crie um endpoint em uma API existente" />
-        <x-card title="Crie a página de configuração do BOT de whatsapp" />
+        @foreach($tasks as $task)
+            <x-card title="{{$task->title}}" id="{{$task->id}}" />
+        @endforeach
+    </section>
+    <section class="max-w-6xl mt-5 mx-auto w-full">
+        {{$tasks->links()}}
     </section>
 </main>
 @stop
